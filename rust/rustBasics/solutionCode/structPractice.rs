@@ -11,9 +11,7 @@ fn update_person_age(person: &mut Person, new_age: u32) {
     person.age = new_age;
 }
 
-fn update_book_title(book: &mut Book, new_title: String) {
-    book.title = new_title;
-}
+
 
 fn check_drinking_age(person: &Person) -> bool {
     if person.age >= LEGAL_DRINKING_AGE {
@@ -73,7 +71,7 @@ fn main() {
     check_drinking_age(&alice);
 
 
-    update_book_title(&mut book, String::from("The Rust Programming Language, 2nd Edition"));
+    book.update_book_title(String::from("The Rust Programming Language, 2nd Edition"));
     println!("{}", book);
     println!("{}", book2);
 }

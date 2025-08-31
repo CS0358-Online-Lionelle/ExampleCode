@@ -14,13 +14,17 @@ impl Person {
 
 #[derive(Debug)]
 pub struct Book {
-    pub title: String,
+    title: String,
     author: String,
     year: u16, // no need to have a larger value
 }
 impl Book {
     pub fn new(title: String, author: String, year: u16) -> Self {
         Book { title, author, year }
+    }
+
+    pub fn update_book_title(&mut self, new_title: String) {
+        self.title = new_title;
     }
 }
 

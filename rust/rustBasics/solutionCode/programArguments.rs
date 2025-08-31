@@ -4,7 +4,7 @@
 ///
 
 fn main() {
-    let args: Vec<String> = std::env::args().collect();
+    let args: Vec<String> = std::env::args().collect(); // Vec<String> is like a list of strings
     
     println!("Number of arguments: {}", args.len());
 

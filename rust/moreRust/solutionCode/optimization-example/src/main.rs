@@ -1,14 +1,11 @@
 //! Example on optimizing rust code
-//! Will be using flamegragh
+//! Will be using samply
 //! ```bash
 //!  # Install
-//! cargo install flamegraph --version 0.6.5 
-//! 
-//! you want to try without the version first, but if you get an error
-//! the older version works fine
+//! cargo install samply
 //! 
 //! # Generate flame graph
-//! cargo flamegraph --bin optimization-example -- 10000
+//! samply record  cargo run -- 100000
 //!
 //! # Opens an interactive HTML flame graph showing where time is spent
 //! ```

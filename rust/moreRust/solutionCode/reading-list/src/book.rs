@@ -55,6 +55,20 @@ impl Book {
     pub fn set_year(&mut self, year: u16) {
         self.year = year;
     }
+
+    pub fn from_csv_line(line: &str) -> Result<Self, String> {
+        let fields: Vec<&str> = line.split(',').collect();
+        if fields.len() != 3 {
+            return Err(format!("Expected 3 fields. But got {}, {:?}", fields.len(), fields));
+        }
+
+        Ok(Book {
+            title: String::from(fields[0]),
+            author: String::from(fields[1]),
+            year: fields[2].parse().
+                    map_err(|_| format!("Invalid year: {}", fields[2]))?,
+        })
+    }
 }
 
 impl fmt::Display for Book {

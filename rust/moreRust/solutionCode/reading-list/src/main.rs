@@ -10,19 +10,26 @@
 mod book;
 use book::{Book, ReadingList};
 
-//"Brandon Sanderson", "Mistborn: The Final Empire", 2006
-//"Frank Herbert", "Dune", 1965
-//"J.R.R. Tolkien", "The Fellowship of the Ring", 1954
+//"Mistborn: The Final Empire","Brandon Sanderson",  2006
+//"Dune", "Frank Herbert", 1965
+//"The Fellowship of the Ring","J.R.R. Tolkien", 1954
 
 fn main() {
     let mut list = ReadingList::new();
 
     list.add_book(
-        Book::new("Brandon Sanderson", "Mistborn: The Final Empire", 2006)
+        Book::new("Mistborn: The Final Empire", "Brandon Sanderson",  2006)
     );
 
-    list += Book::new("Frank Herbert", "Dune", 1965);
-    list += Book::new("J.R.R. Tolkien", "The Fellowship of the Ring", 1954);
+    list += Book::new("Dune", "Frank Herbert", 1965);
+    list += Book::new("The Fellowship of the Ring", "J.R.R. Tolkien", 1954);
+
+    println!("{}", list);
+
+    match list.remove_by_title("Dune") {
+        Ok(book) => println!("Removed: {}\n", book),
+        Err(e) => println!("Error: {}\n", e),
+    }
 
     println!("{}", list);
 

@@ -86,6 +86,15 @@ impl ReadingList {
         self.books.push(book);
     }
 
+    pub fn remove_by_title(&mut self, title: &str) -> Result<Book, String> {
+        let position = self.books.iter()
+            .position(|book| book.title == title); 
+        
+        match position {
+            Some(index) => Ok(self.books.remove(index)),
+            None => Err(format!("Book '{}' not found", title))
+        }
+    }
     
 }
 

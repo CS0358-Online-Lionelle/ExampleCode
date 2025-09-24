@@ -92,9 +92,9 @@ impl ReadingList {
 // Then implement Display for ReadingList
 impl fmt::Display for ReadingList {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        writeln!(f, "Reading List ({} books):", self.books.len())?;
+        writeln!(f, "Reading List ({} books):", self.size())?;
         
-        if self.books.is_empty() {
+        if self.is_empty() {
             writeln!(f, "  (No books in list)")?;
         } else {
             for (index, book) in self.books.iter().enumerate() {

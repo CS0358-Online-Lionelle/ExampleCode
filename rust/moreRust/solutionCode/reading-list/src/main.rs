@@ -8,9 +8,22 @@
 //! **Date:** 2025-09-23
 
 mod book;
-use book::{Book};
+use book::{Book, ReadingList};
 
+//"Brandon Sanderson", "Mistborn: The Final Empire", 2006
+//"Frank Herbert", "Dune", 1965
+//"J.R.R. Tolkien", "The Fellowship of the Ring", 1954
 
 fn main() {
-    println!("Hello, world!");
+    let mut list = ReadingList::new();
+
+    list.add_book(
+        Book::new("Brandon Sanderson", "Mistborn: The Final Empire", 2006)
+    );
+
+    list += Book::new("Frank Herbert", "Dune", 1965);
+    list += Book::new("J.R.R. Tolkien", "The Fellowship of the Ring", 1954);
+
+    println!("{}", list);
+
 }

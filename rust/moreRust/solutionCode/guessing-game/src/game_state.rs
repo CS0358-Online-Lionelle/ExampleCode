@@ -29,6 +29,7 @@ pub enum GuessResult {
     Correct,
 }
 
+#[derive(Debug)]
 /// Represents the state of the game
 /// Contains the secret number, the player's guesses,
 /// and the game status

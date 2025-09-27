@@ -80,7 +80,7 @@ impl GameState {
     /// Returns the current game status
     /// # Returns
     /// * `&GameStatus` - The current game status
-    pub fn game_state(&self) -> &GameStatus {
+    pub fn game_status(&self) -> &GameStatus {
         &self.game_status
     }
 
@@ -99,7 +99,7 @@ impl GameState {
         self.secret_number
     }
 
-    
+
 
     /// Makes a guess and updates the game state
     /// # Arguments

@@ -9,20 +9,20 @@ const MAX_GUESSES: usize = 10;
 const MIN_NUMBER: u32 = 1;
 const MAX_NUMBER: u32 = 100;
 
-#[derive(PartialEq)]
+#[derive(PartialEq, Debug)]
 pub enum PlayerType {
     Human,
     Computer,
 }
 
-#[derive(PartialEq)]
+#[derive(PartialEq, Debug)]
 pub enum GameStatus {
     InProgress,
     Won,
     Lost,
 }
 
-#[derive(PartialEq)]
+#[derive(PartialEq, Debug)]
 pub enum GuessResult {
     TooLow,
     TooHigh,
